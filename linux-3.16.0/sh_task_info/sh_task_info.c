@@ -35,14 +35,14 @@ asmlinkage long sys_sh_task_info(int pid, char *filename)
 				Static Priority: %ld\n \
 				Normal Priority: %ld\n ",
 				task->comm, \
-				(long)task_pid_nr(task), \
-				(long)task->state, \
-				(long)task->prio, \
-				(long)task->rt_priority, \
-				(long)task->static_prio, \
-				(long)task->normal_prio \
+				task_pid_nr(task), \
+				task->state, \
+				task->prio, \
+				task->rt_priority, \
+				task->static_prio, \
+				task->normal_prio \
 			);
-			char *data;
+			char data[500];
 //			data = strcat1(data,task->comm);
 //			data = strcat1(data,task_pid_nr(task));
 //			data = strcat1(data,task->state);
@@ -58,12 +58,12 @@ asmlinkage long sys_sh_task_info(int pid, char *filename)
 				Static Priority: %ld\n \
 				Normal Priority: %ld\n",
 				task->comm, \
-				(long)task_pid_nr(task), \
-				(long)task->state, \
-				(long)task->prio, \
-				(long)task->rt_priority, \
-				(long)task->static_prio, \
-				(long)task->normal_prio \
+				task_pid_nr(task), \
+				task->state, \
+				task->prio, \
+				task->rt_priority, \
+				task->static_prio, \
+				task->normal_prio \
 			);
 			if(fd >= 0)
 			{
